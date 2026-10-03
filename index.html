@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Talal Nasir — computer science student and software developer building thoughtful applications across AI, mobile, desktop and systems."
+    />
+    <meta name="theme-color" content="#050608" />
+    <title>Talal Nasir — Software Developer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Syne:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Talal Nasir, home">
+        <span class="brand-mark">TN</span>
+        <span class="brand-copy">Talal Nasir<small>Software developer</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#profile">Profile</a>
+        <a href="#toolkit">Toolkit</a>
+        <a class="nav-cta" href="#contact">Connect</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img
+          class="hero-art"
+          src="assets/hero-architecture.jpg"
+          alt="Abstract glass architecture with luminous blue and green data pathways"
+          width="1586"
+          height="992"
+        />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow reveal"><span></span> Lahore, Pakistan · Building in public</p>
+          <h1 id="hero-title" class="reveal">
+            I turn complex ideas into
+            <span class="gradient-text">software that feels inevitable.</span>
+          </h1>
+          <p class="hero-intro reveal">
+            I’m Talal Nasir, a computer science student and software developer building
+            privacy-first products, practical AI experiments, and systems made for real use.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="button button-primary magnetic" href="#work">Explore selected work</a>
+            <a
+              class="button button-ghost magnetic"
+              href="https://github.com/TalalNasir1"
+              target="_blank"
+              rel="noreferrer"
+            >GitHub profile</a>
+          </div>
+          <dl class="hero-facts reveal" aria-label="Profile facts">
+            <div><dt>10</dt><dd>public repositories</dd></div>
+            <div><dt>04</dt><dd>core build disciplines</dd></div>
+            <div><dt>∞</dt><dd>curiosity for better systems</dd></div>
+          </dl>
+        </div>
+        <div class="hero-signals" aria-hidden="true">
+          <span style="--x: 72%; --y: 18%; --delay: 0s">PYTHON</span>
+          <span style="--x: 88%; --y: 43%; --delay: -1.4s">FLUTTER</span>
+          <span style="--x: 64%; --y: 72%; --delay: -2.2s">SWIFT</span>
+          <span style="--x: 86%; --y: 82%; --delay: -0.7s">C++</span>
+        </div>
+        <a class="scroll-cue" href="#work">Selected work<span></span></a>
+      </section>
+
+      <section class="section projects-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading reveal">
+          <p class="section-kicker"><span>01</span> Selected work</p>
+          <div>
+            <h2 id="work-title">Built to solve,<br />not just to ship.</h2>
+            <p>Four projects across applied AI, native products, operational software, and network design.</p>
+          </div>
+        </div>
+
+        <div class="project-filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter-chip is-active" type="button" data-filter="all">All projects</button>
+          <button class="filter-chip" type="button" data-filter="ai">Applied AI</button>
+          <button class="filter-chip" type="button" data-filter="product">Products</button>
+          <button class="filter-chip" type="button" data-filter="systems">Systems</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-featured reveal" data-category="ai" data-tilt>
+            <a
+              class="project-visual"
+              href="https://huggingface.co/spaces/TalalNasir/medical-insurance-cost-prediction"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the Medical Insurance Cost Predictor live demo"
+            >
+              <img
+                src="assets/project-medical.jpg"
+                alt="Medical Insurance Cost Predictor application interface"
+                width="596"
+                height="698"
+                loading="lazy"
+              />
+              <span class="visual-badge">Live model</span>
+              <span class="metric-orbit"><strong>80.69%</strong><small>test R²</small></span>
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span>01 · Applied AI</span><span>2026</span></div>
+              <h3>Medical Insurance Cost Predictor</h3>
+              <p>
+                An end-to-end linear regression project that moves from a cleaned 1,338-row dataset
+                to a transparent prediction interface and reproducible evaluation.
+              </p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>Python</li><li>Scikit-learn</li><li>Gradio</li><li>Data analysis</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/TalalNasir1/medical-insurance-cost-prediction" target="_blank" rel="noreferrer">View repository</a>
+                <a href="https://huggingface.co/spaces/TalalNasir/medical-insurance-cost-prediction" target="_blank" rel="noreferrer">Try live demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="product" data-tilt>
+            <a
+              class="project-visual project-visual-wide"
+              href="https://github.com/TalalNasir1/PocketLedger"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Pocket Ledger on GitHub"
+            >
+              <img
+                src="assets/project-pocket-ledger.png"
+                alt="Pocket Ledger macOS finance dashboard"
+                width="1180"
+                height="820"
+                loading="lazy"
+              />
+              <span class="visual-badge">Private by design</span>
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span>02 · Native product</span><span>2026</span></div>
+              <h3>Pocket Ledger</h3>
+              <p>
+                A native macOS finance and subscription tracker with Touch ID, local backups,
+                CSV export, and no server, analytics, advertisements, or internet dependency.
+              </p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>Swift</li><li>macOS</li><li>Keychain</li><li>Offline-first</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/TalalNasir1/PocketLedger" target="_blank" rel="noreferrer">View repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="product" data-tilt>
+            <a
+              class="project-visual project-visual-wide"
+              href="https://github.com/TalalNasir1/Offline-Loan-Management-System"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Offline Loan Management System on GitHub"
+            >
+              <img
+                src="assets/project-loans.jpg"
+                alt="Offline Loan Management System dashboard"
+                width="1358"
+                height="694"
+                loading="lazy"
+              />
+              <span class="visual-badge">Operational software</span>
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span>03 · Desktop application</span><span>2026</span></div>
+              <h3>Offline Loan Management System</h3>
+              <p>
+                A practical Windows application for borrowers, repayments, expenses, vouchers,
+                reporting, Excel imports, and local backup—designed to replace manual records.
+              </p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>Flutter</li><li>Dart</li><li>SQLite</li><li>PDF &amp; Excel</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/TalalNasir1/Offline-Loan-Management-System" target="_blank" rel="noreferrer">View repository</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-wide reveal" data-category="systems" data-tilt>
+            <a
+              class="project-visual project-visual-network"
+              href="https://github.com/TalalNasir1/ecommerce-data-center-network"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open E-Commerce Data Center Network on GitHub"
+            >
+              <img
+                src="assets/project-network.png"
+                alt="E-commerce data center network topology"
+                width="1350"
+                height="420"
+                loading="lazy"
+              />
+              <span class="visual-badge">5 network zones</span>
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span>04 · Systems design</span><span>2026</span></div>
+              <h3>E-Commerce Data Center Network</h3>
+              <p>
+                A Cisco Packet Tracer simulation connecting web, admin, support, data-center,
+                and wireless zones with centralized DNS, web, mail, and RADIUS services.
+              </p>
+              <ul class="tag-list" aria-label="Technologies">
+                <li>Cisco Packet Tracer</li><li>IPv4</li><li>Routing</li><li>RADIUS</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/TalalNasir1/ecommerce-data-center-network" target="_blank" rel="noreferrer">View repository</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <a class="text-link reveal" href="https://github.com/TalalNasir1?tab=repositories" target="_blank" rel="noreferrer">
+          Explore all ten repositories <span>GitHub / TalalNasir1</span>
+        </a>
+      </section>
+
+      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+        <div class="section-heading reveal">
+          <p class="section-kicker"><span>02</span> Profile</p>
+          <div>
+            <h2 id="profile-title">A builder with range<br />and a reason.</h2>
+            <p>Technical curiosity, practical outcomes, and steady growth across disciplines.</p>
+          </div>
+        </div>
+
+        <div class="profile-layout">
+          <div class="portrait-panel reveal">
+            <div class="portrait-frame">
+              <img src="assets/talal-nasir.jpg" alt="Portrait of Talal Nasir" width="460" height="460" loading="lazy" />
+              <span class="portrait-ring" aria-hidden="true"></span>
+            </div>
+            <div class="portrait-note">
+              <span>Based in</span>
+              <strong>Lahore, Pakistan</strong>
+              <small>Computer Science · Software Development</small>
+            </div>
+          </div>
+
+          <div class="profile-copy reveal">
+            <p class="profile-lead">
+              I build across the stack because the problem—not the trend—should decide the tool.
+            </p>
+            <p>
+              My work moves between applied machine learning, Flutter desktop applications,
+              native macOS software, C++ foundations, and network design. The common thread is
+              simple: understand the system, make deliberate choices, and deliver something useful.
+            </p>
+            <p>
+              I’m currently studying Computer Science at the University of Management and Technology
+              while continuing to turn coursework, practical needs, and personal ideas into working software.
+            </p>
+            <a class="button button-ghost magnetic" href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer">Full LinkedIn profile</a>
+          </div>
+
+          <ol class="journey reveal" aria-label="Experience and education timeline">
+            <li>
+              <span class="journey-year">2023—2027</span>
+              <div><strong>University of Management and Technology</strong><p>Computer Science undergraduate · Lahore</p></div>
+            </li>
+            <li>
+              <span class="journey-year">Experience</span>
+              <div><strong>Big Brains</strong><p>Professional exposure · Lahore</p></div>
+            </li>
+            <li>
+              <span class="journey-year">2025</span>
+              <div><strong>Allah Walay Trust Pakistan</strong><p>Volunteer work supporting meal service and sustainable community resources.</p></div>
+            </li>
+            <li>
+              <span class="journey-year">2023</span>
+              <div><strong>Digital Marketing Certification</strong><p>Udemy · Expanding the product and communication perspective.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section toolkit-section" id="toolkit" aria-labelledby="toolkit-title">
+        <div class="section-heading reveal">
+          <p class="section-kicker"><span>03</span> Toolkit</p>
+          <div>
+            <h2 id="toolkit-title">Ideas are cheap.<br />Execution has a stack.</h2>
+          </div>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability reveal">
+            <span class="capability-index">01</span>
+            <h3>Product engineering</h3>
+            <p>Offline-first applications, thoughtful flows, local persistence, reporting, and real operating constraints.</p>
+            <ul><li>Flutter</li><li>Dart</li><li>Swift</li><li>SQLite</li></ul>
+          </article>
+          <article class="capability reveal">
+            <span class="capability-index">02</span>
+            <h3>Applied intelligence</h3>
+            <p>From dataset inspection and feature preparation to interpretable models, evaluation, and usable interfaces.</p>
+            <ul><li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>Gradio</li></ul>
+          </article>
+          <article class="capability reveal">
+            <span class="capability-index">03</span>
+            <h3>Systems foundations</h3>
+            <p>Data structures, object-oriented design, networking fundamentals, and the discipline behind reliable software.</p>
+            <ul><li>C++</li><li>DSA</li><li>OOP</li><li>Networking</li></ul>
+          </article>
+          <article class="capability capability-accent reveal">
+            <span class="capability-index">04</span>
+            <h3>Interface craft</h3>
+            <p>Clear hierarchy, responsive composition, and interfaces that make capable systems easier to understand.</p>
+            <ul><li>HTML</li><li>CSS</li><li>UI design</li><li>Git</li></ul>
+          </article>
+        </div>
+
+        <div class="skill-marquee" aria-label="Technology list">
+          <div>
+            <span>PYTHON</span><i></i><span>FLUTTER</span><i></i><span>SWIFT</span><i></i><span>C++</span><i></i><span>SQL</span><i></i><span>GIT</span><i></i>
+            <span aria-hidden="true">PYTHON</span><i aria-hidden="true"></i><span aria-hidden="true">FLUTTER</span><i aria-hidden="true"></i><span aria-hidden="true">SWIFT</span><i aria-hidden="true"></i><span aria-hidden="true">C++</span><i aria-hidden="true"></i><span aria-hidden="true">SQL</span><i aria-hidden="true"></i><span aria-hidden="true">GIT</span><i aria-hidden="true"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-orbit orbit-one" aria-hidden="true"></div>
+        <div class="contact-orbit orbit-two" aria-hidden="true"></div>
+        <p class="section-kicker reveal"><span>04</span> Connect</p>
+        <h2 id="contact-title" class="reveal">Let’s build something<br /><span>worth remembering.</span></h2>
+        <p class="reveal">Explore the code, follow the journey, or start a conversation.</p>
+        <div class="contact-actions reveal">
+          <a class="button button-light magnetic" href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+          <a class="button button-outline-light magnetic" href="https://github.com/TalalNasir1" target="_blank" rel="noreferrer">Follow on GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top" aria-label="Back to top"><span class="brand-mark">TN</span></a>
+      <p>Designed around real work. Built for the web.</p>
+      <p>© <span data-year></span> Talal Nasir</p>
+    </footer>
+  </body>
+</html>
