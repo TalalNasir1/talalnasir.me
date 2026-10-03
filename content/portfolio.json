@@ -113,19 +113,6 @@
       "description": "A Cisco Packet Tracer simulation connecting web, admin, support, data-center, and wireless zones with centralized DNS, web, mail, and RADIUS services.",
       "year": "2026",
       "category": "systems"
-    },
-    {
-      "layout": "standard",
-      "primaryUrl": "df",
-      "imageAlt": "f",
-      "primaryLabel": "View project",
-      "categoryLabel": "Web",
-      "imageStyle": "standard",
-      "title": "Python Course",
-      "image": "assets/uploads/bigbrains-recommendationletter-bb-3bce2d25375e.png",
-      "description": "bnn",
-      "year": "2026",
-      "category": "ai"
     }
   ],
   "certifications": [
