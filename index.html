@@ -1,252 +1,150 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Talal Nasir — computer science student and software developer building thoughtful applications across AI, mobile, desktop and systems."
-    />
-    <meta name="theme-color" content="#080706" />
-    <title>Talal Nasir — Software Developer</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Talal Nasir is a computer science student and software developer building practical AI, Flutter, macOS, and systems projects." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Talal Nasir · Software Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Syne:wght@500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="scroll-progress" aria-hidden="true"><span></span></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
 
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Talal Nasir, home">
-        <span class="brand-mark">TN</span>
-        <span class="brand-copy">Talal Nasir<small>Software developer</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#profile">Profile</a>
-        <a href="#toolkit">Toolkit</a>
-        <a href="#credentials">Credentials</a>
-        <a class="nav-cta" href="#contact">Connect</a>
-      </nav>
+      <div class="nav-shell">
+        <a class="brand" href="#home" aria-label="Talal Nasir, home">Talal Nasir</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#skills">Skills</a>
+          <a href="#journey">Journey</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" type="button" aria-label="Switch to dark theme" data-theme-toggle>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42M7.06 16.94l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <img
-          class="hero-art"
-          src="assets/hero-obsidian-copper.jpg"
-          alt="Abstract obsidian architecture illuminated by flowing copper light"
-          width="1586"
-          height="992"
-        />
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow reveal"><span></span> Lahore, Pakistan · Building in public</p>
-          <h1 id="hero-title" class="reveal">
-            I turn complex ideas into
-            <span class="gradient-text">software that feels inevitable.</span>
-          </h1>
-          <p class="hero-intro reveal">
-            I’m Talal Nasir, a computer science student and software developer building
-            privacy-first products, practical AI experiments, and systems made for real use.
-          </p>
-          <div class="hero-actions reveal">
-            <a class="button button-primary magnetic" href="#work">Explore selected work</a>
-            <a
-              class="button button-ghost magnetic"
-              href="https://github.com/TalalNasir1"
-              target="_blank"
-              rel="noreferrer"
-            >GitHub profile</a>
+      <section class="hero section" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="availability"><span></span> Computer Science · Lahore, Pakistan</p>
+          <h1 id="hero-title">Hello, I’m<br /><strong>Talal Nasir</strong></h1>
+          <p class="hero-lead">Software developer building practical products across <b>AI, Flutter, native macOS, and systems engineering.</b></p>
+          <p class="hero-note">I turn coursework, real operational needs, and personal ideas into focused software that people can actually use.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">View My Work</a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
           </div>
-          <dl class="hero-facts reveal" aria-label="Profile facts">
-            <div><dt>10</dt><dd>public repositories</dd></div>
-            <div><dt>04</dt><dd>core build disciplines</dd></div>
-            <div><dt>∞</dt><dd>curiosity for better systems</dd></div>
+          <div class="social-links" aria-label="Social profiles">
+            <a href="https://github.com/TalalNasir1" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.5 8.25H3.25V20H6.5V8.25ZM4.88 3A1.88 1.88 0 1 0 4.9 6.76 1.88 1.88 0 0 0 4.88 3ZM20.75 13.26c0-3.54-1.89-5.18-4.41-5.18a3.82 3.82 0 0 0-3.47 1.9V8.25H9.62V20h3.25v-5.82c0-1.53.29-3.02 2.2-3.02 1.88 0 1.9 1.76 1.9 3.12V20h3.25l.53-6.74Z"/></svg>
+            </a>
+          </div>
+          <dl class="hero-stats" aria-label="Portfolio facts">
+            <div><dt>10+</dt><dd>Public repositories</dd></div>
+            <div><dt>5</dt><dd>Featured projects</dd></div>
+            <div><dt>5</dt><dd>Certifications</dd></div>
           </dl>
         </div>
-        <div class="hero-signals" aria-hidden="true">
-          <span style="--x: 72%; --y: 18%; --delay: 0s">PYTHON</span>
-          <span style="--x: 88%; --y: 43%; --delay: -1.4s">FLUTTER</span>
-          <span style="--x: 64%; --y: 72%; --delay: -2.2s">SWIFT</span>
-          <span style="--x: 86%; --y: 82%; --delay: -0.7s">C++</span>
+
+        <div class="portrait-wrap reveal">
+          <div class="portrait-halo"></div>
+          <div class="portrait-frame">
+            <img src="assets/talal-nasir.jpg" alt="Portrait of Talal Nasir" width="500" height="500" />
+          </div>
+          <div class="portrait-status"><span></span> Open to collaboration</div>
         </div>
-        <a class="scroll-cue" href="#work">Selected work<span></span></a>
+        <a class="scroll-cue" href="#skills">Scroll to explore <span>↓</span></a>
       </section>
 
-      <section class="section projects-section" id="work" aria-labelledby="work-title">
+      <section class="section section-block" id="skills" aria-labelledby="skills-title">
         <div class="section-heading reveal">
-          <p class="section-kicker"><span>01</span> Selected work</p>
-          <div>
-            <h2 id="work-title">Built to solve,<br />not just to ship.</h2>
-            <p data-project-summary>Five projects across applied AI, native products, interface craft, operational software, and network design.</p>
-          </div>
+          <h2 id="skills-title">Technical Skills</h2>
+          <p>A practical toolkit shaped by desktop software, mobile interfaces, machine-learning experiments, and network systems.</p>
         </div>
-
-        <div class="project-filters reveal" role="group" aria-label="Filter projects">
-          <button class="filter-chip is-active" type="button" data-filter="all">All projects</button>
-          <button class="filter-chip" type="button" data-filter="ai">Applied AI</button>
-          <button class="filter-chip" type="button" data-filter="product">Products</button>
-          <button class="filter-chip" type="button" data-filter="systems">Systems</button>
+        <div class="skill-grid">
+          <article class="skill-card reveal"><h3><span>&lt;/&gt;</span> Programming Languages</h3><ul><li>Python</li><li>C++</li><li>Dart</li><li>Swift</li><li>SQL</li></ul></article>
+          <article class="skill-card reveal"><h3><span>▦</span> Application Development</h3><ul><li>Flutter</li><li>macOS</li><li>SQLite</li><li>Offline-first</li></ul></article>
+          <article class="skill-card reveal"><h3><span>✦</span> AI &amp; Data</h3><ul><li>Pandas</li><li>Scikit-learn</li><li>Gradio</li><li>Regression</li></ul></article>
+          <article class="skill-card reveal"><h3><span>◎</span> Web &amp; Tools</h3><ul><li>HTML</li><li>CSS</li><li>Git</li><li>GitHub</li></ul></article>
+          <article class="skill-card reveal"><h3><span>⌁</span> Systems &amp; Networking</h3><ul><li>Cisco</li><li>IPv4</li><li>DNS</li><li>Routing</li><li>RADIUS</li></ul></article>
+          <article class="skill-card reveal"><h3><span>◇</span> Product Skills</h3><ul><li>UI Design</li><li>Reporting</li><li>Excel</li><li>PDF</li><li>Digital Marketing</li></ul></article>
         </div>
+      </section>
 
+      <section class="section section-block" id="journey" aria-labelledby="journey-title">
+        <div class="section-heading reveal">
+          <h2 id="journey-title">Learning Journey</h2>
+          <p>Growing through university, focused internships, independent builds, and community work.</p>
+        </div>
+        <div class="journey-list">
+          <article class="journey-card reveal">
+            <div><p class="journey-label">Education</p><h3>Bachelor of Computer Science</h3><strong>University of Management and Technology</strong></div>
+            <div class="journey-meta"><span>2023 — 2027</span><span>Lahore, Pakistan</span></div>
+            <p class="journey-copy">Developing strong foundations in software engineering, data structures, databases, object-oriented programming, and computer networks.</p>
+            <ul class="tag-list"><li>Computer Science</li><li>DSA</li><li>OOP</li><li>Databases</li></ul>
+          </article>
+          <article class="journey-card reveal">
+            <div><p class="journey-label">Internship learning</p><h3>Flutter Development &amp; AI/ML</h3><strong>Big Brains</strong></div>
+            <div class="journey-meta"><span>2026</span><span>Lahore, Pakistan</span></div>
+            <p class="journey-copy">Practiced mobile interface development with Flutter and strengthened applied machine-learning foundations through guided project work.</p>
+            <ul class="tag-list"><li>Flutter</li><li>Dart</li><li>Mobile UI</li><li>AI/ML</li></ul>
+          </article>
+          <article class="journey-card reveal">
+            <div><p class="journey-label">Community</p><h3>Volunteer Contribution</h3><strong>Allah Walay Trust Pakistan</strong></div>
+            <div class="journey-meta"><span>2025</span><span>Pakistan</span></div>
+            <p class="journey-copy">Supported community initiatives around meal service and sustainable resources, contributing time to practical social-impact work.</p>
+            <ul class="tag-list"><li>Community service</li><li>Teamwork</li><li>Social impact</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-block" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading reveal"><h2 id="projects-title">Featured Projects</h2><p>Selected work across applied AI, native software, mobile interfaces, operational tools, and network design.</p></div>
         <div class="project-grid" data-project-grid aria-live="polite"></div>
         <noscript><p class="content-notice">Enable JavaScript to view the project collection.</p></noscript>
-
-        <a class="text-link reveal" href="https://github.com/TalalNasir1?tab=repositories" target="_blank" rel="noreferrer">
-          Explore all ten repositories <span>GitHub / TalalNasir1</span>
-        </a>
+        <div class="center-link reveal"><a class="button button-secondary" href="https://github.com/TalalNasir1?tab=repositories" target="_blank" rel="noreferrer">View all repositories</a></div>
       </section>
 
-      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker"><span>02</span> Profile</p>
-          <div>
-            <h2 id="profile-title">A builder with range<br />and a reason.</h2>
-            <p>Technical curiosity, practical outcomes, and steady growth across disciplines.</p>
-          </div>
-        </div>
-
-        <div class="profile-layout">
-          <div class="portrait-panel reveal">
-            <div class="portrait-frame">
-              <img src="assets/talal-nasir.jpg" alt="Portrait of Talal Nasir" width="460" height="460" loading="lazy" />
-              <span class="portrait-ring" aria-hidden="true"></span>
-            </div>
-            <div class="portrait-note">
-              <span>Based in</span>
-              <strong>Lahore, Pakistan</strong>
-              <small>Computer Science · Software Development</small>
-            </div>
-          </div>
-
-          <div class="profile-copy reveal">
-            <p class="profile-lead">
-              I build across the stack because the problem—not the trend—should decide the tool.
-            </p>
-            <p>
-              My work moves between applied machine learning, Flutter desktop applications,
-              native macOS software, C++ foundations, and network design. The common thread is
-              simple: understand the system, make deliberate choices, and deliver something useful.
-            </p>
-            <p>
-              I’m currently studying Computer Science at the University of Management and Technology
-              while continuing to turn coursework, practical needs, and personal ideas into working software.
-            </p>
-            <a class="button button-ghost magnetic" href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer">Full LinkedIn profile</a>
-          </div>
-
-          <ol class="journey reveal" aria-label="Experience and education timeline">
-            <li>
-              <span class="journey-year">2023—2027</span>
-              <div><strong>University of Management and Technology</strong><p>Computer Science undergraduate · Lahore</p></div>
-            </li>
-            <li>
-              <span class="journey-year">2026</span>
-              <div><strong>Big Brains</strong><p>Flutter Development and AI/ML internships · Lahore</p></div>
-            </li>
-            <li>
-              <span class="journey-year">2025</span>
-              <div><strong>Allah Walay Trust Pakistan</strong><p>Volunteer work supporting meal service and sustainable community resources.</p></div>
-            </li>
-            <li>
-              <span class="journey-year">2023</span>
-              <div><strong>Digital Marketing Certification</strong><p>Udemy · Expanding the product and communication perspective.</p></div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section toolkit-section" id="toolkit" aria-labelledby="toolkit-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker"><span>03</span> Toolkit</p>
-          <div>
-            <h2 id="toolkit-title">Ideas are cheap.<br />Execution has a stack.</h2>
-          </div>
-        </div>
-
-        <div class="capability-grid">
-          <article class="capability reveal">
-            <span class="capability-index">01</span>
-            <h3>Product engineering</h3>
-            <p>Offline-first applications, thoughtful flows, local persistence, reporting, and real operating constraints.</p>
-            <ul><li>Flutter</li><li>Dart</li><li>Swift</li><li>SQLite</li></ul>
-          </article>
-          <article class="capability reveal">
-            <span class="capability-index">02</span>
-            <h3>Applied intelligence</h3>
-            <p>From dataset inspection and feature preparation to interpretable models, evaluation, and usable interfaces.</p>
-            <ul><li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>Gradio</li></ul>
-          </article>
-          <article class="capability reveal">
-            <span class="capability-index">03</span>
-            <h3>Systems foundations</h3>
-            <p>Data structures, object-oriented design, networking fundamentals, and the discipline behind reliable software.</p>
-            <ul><li>C++</li><li>DSA</li><li>OOP</li><li>Networking</li></ul>
-          </article>
-          <article class="capability capability-accent reveal">
-            <span class="capability-index">04</span>
-            <h3>Interface craft</h3>
-            <p>Clear hierarchy, responsive composition, and interfaces that make capable systems easier to understand.</p>
-            <ul><li>HTML</li><li>CSS</li><li>UI design</li><li>Git</li></ul>
-          </article>
-        </div>
-
-        <div class="skill-marquee" aria-label="Technology list">
-          <div>
-            <span>PYTHON</span><i></i><span>FLUTTER</span><i></i><span>SWIFT</span><i></i><span>C++</span><i></i><span>SQL</span><i></i><span>GIT</span><i></i>
-            <span aria-hidden="true">PYTHON</span><i aria-hidden="true"></i><span aria-hidden="true">FLUTTER</span><i aria-hidden="true"></i><span aria-hidden="true">SWIFT</span><i aria-hidden="true"></i><span aria-hidden="true">C++</span><i aria-hidden="true"></i><span aria-hidden="true">SQL</span><i aria-hidden="true"></i><span aria-hidden="true">GIT</span><i aria-hidden="true"></i>
-          </div>
-        </div>
-      </section>
-
-      <section class="section credentials-section" id="credentials" aria-labelledby="credentials-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker"><span>04</span> Credentials</p>
-          <div>
-            <h2 id="credentials-title">Skills deepen.<br />Perspective widens.</h2>
-            <p>Formal learning across digital products, communication, web publishing, and visual craft.</p>
-          </div>
-        </div>
-
+      <section class="section section-block" id="certifications" aria-labelledby="certifications-title">
+        <div class="section-heading reveal"><h2 id="certifications-title">Certifications</h2><p>Formal learning that adds product, communication, web-publishing, and visual-design perspective to my technical work.</p></div>
         <div class="credential-grid" data-credential-grid aria-live="polite"></div>
         <noscript><p class="content-notice">Enable JavaScript to view certifications.</p></noscript>
-
-        <a class="text-link reveal" href="https://www.linkedin.com/in/talalnasir1/details/certifications/" target="_blank" rel="noreferrer">
-          View credentials on LinkedIn <span>Licenses &amp; certifications</span>
-        </a>
       </section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-orbit orbit-one" aria-hidden="true"></div>
-        <div class="contact-orbit orbit-two" aria-hidden="true"></div>
-        <p class="section-kicker reveal"><span>05</span> Connect</p>
-        <h2 id="contact-title" class="reveal">Let’s build something<br /><span>worth remembering.</span></h2>
-        <p class="reveal">Explore the code, follow the journey, or start a conversation.</p>
-        <div class="contact-actions reveal">
-          <a class="button button-light magnetic" href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
-          <a class="button button-outline-light magnetic" href="https://github.com/TalalNasir1" target="_blank" rel="noreferrer">Follow on GitHub</a>
+      <section class="section section-block contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading reveal"><h2 id="contact-title">Let’s Work Together</h2><p>Have an idea, internship opportunity, or interesting technical problem? I’m always open to a thoughtful conversation.</p></div>
+        <div class="contact-grid">
+          <div class="contact-list reveal">
+            <a class="contact-card" href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer"><span class="contact-icon">in</span><span><b>LinkedIn</b><small>linkedin.com/in/talalnasir1</small></span></a>
+            <a class="contact-card" href="https://github.com/TalalNasir1" target="_blank" rel="noreferrer"><span class="contact-icon">GH</span><span><b>GitHub</b><small>github.com/TalalNasir1</small></span></a>
+            <div class="contact-card"><span class="contact-icon">⌖</span><span><b>Location</b><small>Lahore, Pakistan</small></span></div>
+          </div>
+          <aside class="contact-cta reveal">
+            <p class="eyebrow">Start a conversation</p>
+            <h3>Let’s build something useful.</h3>
+            <p>The best projects begin with a clear problem and a willingness to learn. Share what you’re working on.</p>
+            <div class="contact-actions"><a class="button button-primary" href="https://www.linkedin.com/in/talalnasir1/" target="_blank" rel="noreferrer">Message on LinkedIn</a><a class="button button-secondary" href="https://github.com/TalalNasir1" target="_blank" rel="noreferrer">Explore GitHub</a></div>
+          </aside>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <a class="brand" href="#top" aria-label="Back to top"><span class="brand-mark">TN</span></a>
-      <p>Designed around real work. Built for the web.</p>
-      <p>© <span data-year></span> Talal Nasir</p>
-    </footer>
+    <footer class="site-footer"><a class="brand" href="#home">Talal Nasir</a><p>Computer Science · Software Development · Lahore</p><p>© <span data-year></span> Talal Nasir</p></footer>
   </body>
 </html>

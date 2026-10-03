@@ -2,32 +2,33 @@ const body = document.body;
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
-const progress = document.querySelector('.scroll-progress span');
-const glow = document.querySelector('.cursor-glow');
-const heroArt = document.querySelector('.hero-art');
+const themeButton = document.querySelector('[data-theme-toggle]');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
-function updateScrollUI() {
-  const y = window.scrollY;
-  header.classList.toggle('is-scrolled', y > 28);
-  const total = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.width = `${total > 0 ? (y / total) * 100 : 0}%`;
-
-  if (!prefersReducedMotion && heroArt && y < window.innerHeight * 1.2) {
-    heroArt.style.transform = `scale(1.02) translateY(${y * 0.06}px)`;
-  }
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const dark = theme === 'dark';
+  themeButton.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+  themeMeta.setAttribute('content', dark ? '#0b0b0d' : '#ffffff');
 }
 
-window.addEventListener('scroll', updateScrollUI, { passive: true });
-updateScrollUI();
+const savedTheme = localStorage.getItem('portfolio-theme');
+applyTheme(savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
+themeButton.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(nextTheme);
+  localStorage.setItem('portfolio-theme', nextTheme);
+});
 
 menuButton.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  nav.classList.toggle('is-open', !isOpen);
-  body.classList.toggle('menu-open', !isOpen);
+  const open = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!open));
+  nav.classList.toggle('is-open', !open);
+  body.classList.toggle('menu-open', !open);
 });
 
 nav.querySelectorAll('a').forEach((link) => {
@@ -54,26 +55,18 @@ function safeUrl(value = '') {
 }
 
 function projectMarkup(project, index) {
-  const number = String(index + 1).padStart(2, '0');
-  const layoutClass = project.layout === 'wide' ? ' project-wide' : project.layout === 'featured' ? ' project-featured' : '';
-  const styleClass = project.imageStyle && project.imageStyle !== 'standard' ? ` project-visual-${escapeHtml(project.imageStyle)}` : '';
   const tags = (project.tags || []).map((tag) => `<li>${escapeHtml(tag)}</li>`).join('');
   const secondary = project.secondaryUrl && project.secondaryLabel
     ? `<a href="${safeUrl(project.secondaryUrl)}" target="_blank" rel="noreferrer">${escapeHtml(project.secondaryLabel)}</a>`
     : '';
-  const metric = project.metricValue
-    ? `<span class="metric-orbit"><strong>${escapeHtml(project.metricValue)}</strong><small>${escapeHtml(project.metricLabel)}</small></span>`
-    : '';
 
   return `
-    <article class="project-card${layoutClass} reveal" data-category="${escapeHtml(project.category)}" data-tilt>
-      <a class="project-visual${styleClass}" href="${safeUrl(project.visualUrl || project.primaryUrl)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(project.visualLabel || `Open ${project.title}`)}">
+    <article class="project-card reveal">
+      <a class="project-image" href="${safeUrl(project.visualUrl || project.primaryUrl)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(project.visualLabel || `Open ${project.title}`)}">
         <img src="${safeUrl(project.image)}" alt="${escapeHtml(project.imageAlt || project.title)}" loading="lazy" />
-        ${project.badge ? `<span class="visual-badge">${escapeHtml(project.badge)}</span>` : ''}
-        ${metric}
       </a>
       <div class="project-content">
-        <div class="project-meta"><span>${number} · ${escapeHtml(project.categoryLabel)}</span><span>${escapeHtml(project.year)}</span></div>
+        <div class="project-meta"><span>${escapeHtml(project.categoryLabel)}</span><span>${escapeHtml(project.year)}</span></div>
         <h3>${escapeHtml(project.title)}</h3>
         <p>${escapeHtml(project.description)}</p>
         <ul class="tag-list" aria-label="Technologies">${tags}</ul>
@@ -87,9 +80,8 @@ function projectMarkup(project, index) {
 
 function credentialMarkup(credential, index) {
   const number = String(index + 1).padStart(2, '0');
-  const featuredClass = credential.featured ? ' credential-featured' : '';
   return `
-    <article class="credential-card${featuredClass} reveal">
+    <article class="credential-card reveal">
       <span class="credential-number">${number}</span>
       <p class="credential-issuer">${escapeHtml(credential.issuer)}</p>
       <h3>${escapeHtml(credential.title)}</h3>
@@ -97,76 +89,44 @@ function credentialMarkup(credential, index) {
     </article>`;
 }
 
-function initializeReveal() {
-  if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.reveal').forEach((item) => item.classList.add('is-visible'));
+let revealObserver;
+
+function observeReveals() {
+  const items = document.querySelectorAll('.reveal:not([data-observed])');
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    items.forEach((item) => item.classList.add('is-visible'));
     return;
   }
 
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           revealObserver.unobserve(entry.target);
         }
       });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -6% 0px' },
-  );
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+  }
 
-  document.querySelectorAll('.reveal').forEach((item, index) => {
-    item.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+  items.forEach((item, index) => {
+    item.dataset.observed = 'true';
+    item.style.transitionDelay = `${Math.min(index % 3, 2) * 65}ms`;
     revealObserver.observe(item);
   });
 }
 
-function initializeFilters() {
-  const filters = document.querySelectorAll('[data-filter]');
-  const projects = document.querySelectorAll('[data-category]');
-
-  filters.forEach((filter) => {
-    filter.addEventListener('click', () => {
-      filters.forEach((item) => item.classList.remove('is-active'));
-      filter.classList.add('is-active');
-      const selected = filter.dataset.filter;
-
-      projects.forEach((project) => {
-        const visible = selected === 'all' || project.dataset.category === selected;
-        project.classList.toggle('is-hidden', !visible);
-      });
+function initializeActiveNavigation() {
+  if (!('IntersectionObserver' in window)) return;
+  const links = [...nav.querySelectorAll('a[href^="#"]')];
+  const sections = links.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      links.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`));
     });
-  });
-}
-
-function initializePointerEffects() {
-  if (prefersReducedMotion || !window.matchMedia('(pointer: fine)').matches) return;
-
-  window.addEventListener('pointermove', (event) => {
-    glow.style.opacity = '1';
-    glow.style.left = `${event.clientX}px`;
-    glow.style.top = `${event.clientY}px`;
-  }, { passive: true });
-
-  document.querySelectorAll('[data-tilt]').forEach((card) => {
-    card.addEventListener('pointermove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(1200px) rotateX(${-y * 1.7}deg) rotateY(${x * 1.7}deg) translateY(-2px)`;
-    });
-    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-  });
-
-  document.querySelectorAll('.magnetic').forEach((button) => {
-    button.addEventListener('pointermove', (event) => {
-      const rect = button.getBoundingClientRect();
-      const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
-      button.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
-    });
-    button.addEventListener('pointerleave', () => { button.style.transform = ''; });
-  });
+  }, { rootMargin: '-35% 0px -58% 0px', threshold: 0 });
+  sections.forEach((section) => sectionObserver.observe(section));
 }
 
 async function loadPortfolioContent() {
@@ -179,20 +139,13 @@ async function loadPortfolioContent() {
     const content = await response.json();
     projectGrid.innerHTML = (content.projects || []).map(projectMarkup).join('');
     credentialGrid.innerHTML = (content.certifications || []).map(credentialMarkup).join('');
-
-    const count = content.projects?.length || 0;
-    const summary = document.querySelector('[data-project-summary]');
-    if (summary) summary.textContent = `${count} selected projects across applied AI, native products, interface craft, operational software, and network design.`;
   } catch (error) {
     console.error(error);
     projectGrid.innerHTML = '<p class="content-notice">Projects are temporarily unavailable.</p>';
     credentialGrid.innerHTML = '<p class="content-notice">Certifications are temporarily unavailable.</p>';
   }
 
-  initializeReveal();
-  initializeFilters();
-  initializePointerEffects();
-  updateScrollUI();
+  observeReveals();
 
   if (window.location.hash) {
     requestAnimationFrame(() => {
@@ -205,4 +158,10 @@ async function loadPortfolioContent() {
   }
 }
 
+observeReveals();
+initializeActiveNavigation();
 loadPortfolioContent();
+
+window.addEventListener('scroll', () => {
+  header.classList.toggle('is-scrolled', window.scrollY > 20);
+}, { passive: true });
