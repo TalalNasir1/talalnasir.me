@@ -1,0 +1,72 @@
+backend:
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  branch: main
+
+media_folder: assets/uploads
+public_folder: assets/uploads
+
+collections:
+  - label: Portfolio
+    name: portfolio
+    files:
+      - label: Projects and certifications
+        name: portfolio_content
+        file: content/portfolio.json
+        format: json
+        fields:
+          - label: Projects
+            name: projects
+            widget: list
+            summary: "{{fields.title}} — {{fields.year}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - label: Category
+                name: category
+                widget: select
+                options:
+                  - { label: Applied AI, value: ai }
+                  - { label: Product, value: product }
+                  - { label: Systems, value: systems }
+              - { label: Category label, name: categoryLabel, widget: string, hint: "Example: Mobile UI or Desktop application" }
+              - { label: Year, name: year, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Technologies, name: tags, widget: list, field: { label: Technology, name: technology, widget: string } }
+              - { label: Project image, name: image, widget: image }
+              - { label: Image description, name: imageAlt, widget: string }
+              - label: Image presentation
+                name: imageStyle
+                widget: select
+                default: standard
+                options:
+                  - { label: Standard portrait, value: standard }
+                  - { label: Wide screenshot, value: wide }
+                  - { label: Mobile app poster, value: coffee }
+                  - { label: Network diagram, value: network }
+              - { label: Image badge, name: badge, widget: string, required: false }
+              - { label: Main link, name: primaryUrl, widget: string }
+              - { label: Main link label, name: primaryLabel, widget: string, default: View project }
+              - { label: Second link, name: secondaryUrl, widget: string, required: false }
+              - { label: Second link label, name: secondaryLabel, widget: string, required: false }
+              - { label: Image link, name: visualUrl, widget: string, required: false, hint: "Defaults to the main link." }
+              - { label: Accessible image-link label, name: visualLabel, widget: string, required: false }
+              - label: Card layout
+                name: layout
+                widget: select
+                default: standard
+                options:
+                  - { label: Standard, value: standard }
+                  - { label: Featured, value: featured }
+                  - { label: Full width, value: wide }
+              - { label: Metric value, name: metricValue, widget: string, required: false, hint: "Optional circular highlight, such as 80.69%." }
+              - { label: Metric label, name: metricLabel, widget: string, required: false }
+          - label: Certifications
+            name: certifications
+            widget: list
+            summary: "{{fields.title}} — {{fields.issuer}}"
+            fields:
+              - { label: Certification title, name: title, widget: string }
+              - { label: Issuer, name: issuer, widget: string }
+              - { label: Issued date, name: issued, widget: string, hint: "Example: Aug 2022" }
+              - { label: Credential ID or subject, name: credential, widget: string, required: false }
+              - { label: Feature this card, name: featured, widget: boolean, default: false }

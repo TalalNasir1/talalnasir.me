@@ -7,7 +7,7 @@
       name="description"
       content="Portfolio of Talal Nasir — computer science student and software developer building thoughtful applications across AI, mobile, desktop and systems."
     />
-    <meta name="theme-color" content="#050608" />
+    <meta name="theme-color" content="#080706" />
     <title>Talal Nasir — Software Developer</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,6 +37,7 @@
         <a href="#work">Work</a>
         <a href="#profile">Profile</a>
         <a href="#toolkit">Toolkit</a>
+        <a href="#credentials">Credentials</a>
         <a class="nav-cta" href="#contact">Connect</a>
       </nav>
     </header>
@@ -45,8 +46,8 @@
       <section class="hero" id="top" aria-labelledby="hero-title">
         <img
           class="hero-art"
-          src="assets/hero-architecture.jpg"
-          alt="Abstract glass architecture with luminous blue and green data pathways"
+          src="assets/hero-obsidian-copper.jpg"
+          alt="Abstract obsidian architecture illuminated by flowing copper light"
           width="1586"
           height="992"
         />
@@ -91,7 +92,7 @@
           <p class="section-kicker"><span>01</span> Selected work</p>
           <div>
             <h2 id="work-title">Built to solve,<br />not just to ship.</h2>
-            <p>Four projects across applied AI, native products, operational software, and network design.</p>
+            <p data-project-summary>Five projects across applied AI, native products, interface craft, operational software, and network design.</p>
           </div>
         </div>
 
@@ -102,141 +103,8 @@
           <button class="filter-chip" type="button" data-filter="systems">Systems</button>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card project-featured reveal" data-category="ai" data-tilt>
-            <a
-              class="project-visual"
-              href="https://huggingface.co/spaces/TalalNasir/medical-insurance-cost-prediction"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open the Medical Insurance Cost Predictor live demo"
-            >
-              <img
-                src="assets/project-medical.jpg"
-                alt="Medical Insurance Cost Predictor application interface"
-                width="596"
-                height="698"
-                loading="lazy"
-              />
-              <span class="visual-badge">Live model</span>
-              <span class="metric-orbit"><strong>80.69%</strong><small>test R²</small></span>
-            </a>
-            <div class="project-content">
-              <div class="project-meta"><span>01 · Applied AI</span><span>2026</span></div>
-              <h3>Medical Insurance Cost Predictor</h3>
-              <p>
-                An end-to-end linear regression project that moves from a cleaned 1,338-row dataset
-                to a transparent prediction interface and reproducible evaluation.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Python</li><li>Scikit-learn</li><li>Gradio</li><li>Data analysis</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/TalalNasir1/medical-insurance-cost-prediction" target="_blank" rel="noreferrer">View repository</a>
-                <a href="https://huggingface.co/spaces/TalalNasir/medical-insurance-cost-prediction" target="_blank" rel="noreferrer">Try live demo</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="product" data-tilt>
-            <a
-              class="project-visual project-visual-wide"
-              href="https://github.com/TalalNasir1/PocketLedger"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open Pocket Ledger on GitHub"
-            >
-              <img
-                src="assets/project-pocket-ledger.png"
-                alt="Pocket Ledger macOS finance dashboard"
-                width="1180"
-                height="820"
-                loading="lazy"
-              />
-              <span class="visual-badge">Private by design</span>
-            </a>
-            <div class="project-content">
-              <div class="project-meta"><span>02 · Native product</span><span>2026</span></div>
-              <h3>Pocket Ledger</h3>
-              <p>
-                A native macOS finance and subscription tracker with Touch ID, local backups,
-                CSV export, and no server, analytics, advertisements, or internet dependency.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Swift</li><li>macOS</li><li>Keychain</li><li>Offline-first</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/TalalNasir1/PocketLedger" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-category="product" data-tilt>
-            <a
-              class="project-visual project-visual-wide"
-              href="https://github.com/TalalNasir1/Offline-Loan-Management-System"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open Offline Loan Management System on GitHub"
-            >
-              <img
-                src="assets/project-loans.jpg"
-                alt="Offline Loan Management System dashboard"
-                width="1358"
-                height="694"
-                loading="lazy"
-              />
-              <span class="visual-badge">Operational software</span>
-            </a>
-            <div class="project-content">
-              <div class="project-meta"><span>03 · Desktop application</span><span>2026</span></div>
-              <h3>Offline Loan Management System</h3>
-              <p>
-                A practical Windows application for borrowers, repayments, expenses, vouchers,
-                reporting, Excel imports, and local backup—designed to replace manual records.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Flutter</li><li>Dart</li><li>SQLite</li><li>PDF &amp; Excel</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/TalalNasir1/Offline-Loan-Management-System" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card project-wide reveal" data-category="systems" data-tilt>
-            <a
-              class="project-visual project-visual-network"
-              href="https://github.com/TalalNasir1/ecommerce-data-center-network"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open E-Commerce Data Center Network on GitHub"
-            >
-              <img
-                src="assets/project-network.png"
-                alt="E-commerce data center network topology"
-                width="1350"
-                height="420"
-                loading="lazy"
-              />
-              <span class="visual-badge">5 network zones</span>
-            </a>
-            <div class="project-content">
-              <div class="project-meta"><span>04 · Systems design</span><span>2026</span></div>
-              <h3>E-Commerce Data Center Network</h3>
-              <p>
-                A Cisco Packet Tracer simulation connecting web, admin, support, data-center,
-                and wireless zones with centralized DNS, web, mail, and RADIUS services.
-              </p>
-              <ul class="tag-list" aria-label="Technologies">
-                <li>Cisco Packet Tracer</li><li>IPv4</li><li>Routing</li><li>RADIUS</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/TalalNasir1/ecommerce-data-center-network" target="_blank" rel="noreferrer">View repository</a>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="project-grid" data-project-grid aria-live="polite"></div>
+        <noscript><p class="content-notice">Enable JavaScript to view the project collection.</p></noscript>
 
         <a class="text-link reveal" href="https://github.com/TalalNasir1?tab=repositories" target="_blank" rel="noreferrer">
           Explore all ten repositories <span>GitHub / TalalNasir1</span>
@@ -287,8 +155,8 @@
               <div><strong>University of Management and Technology</strong><p>Computer Science undergraduate · Lahore</p></div>
             </li>
             <li>
-              <span class="journey-year">Experience</span>
-              <div><strong>Big Brains</strong><p>Professional exposure · Lahore</p></div>
+              <span class="journey-year">2026</span>
+              <div><strong>Big Brains</strong><p>Flutter Development and AI/ML internships · Lahore</p></div>
             </li>
             <li>
               <span class="journey-year">2025</span>
@@ -345,10 +213,27 @@
         </div>
       </section>
 
+      <section class="section credentials-section" id="credentials" aria-labelledby="credentials-title">
+        <div class="section-heading reveal">
+          <p class="section-kicker"><span>04</span> Credentials</p>
+          <div>
+            <h2 id="credentials-title">Skills deepen.<br />Perspective widens.</h2>
+            <p>Formal learning across digital products, communication, web publishing, and visual craft.</p>
+          </div>
+        </div>
+
+        <div class="credential-grid" data-credential-grid aria-live="polite"></div>
+        <noscript><p class="content-notice">Enable JavaScript to view certifications.</p></noscript>
+
+        <a class="text-link reveal" href="https://www.linkedin.com/in/talalnasir1/details/certifications/" target="_blank" rel="noreferrer">
+          View credentials on LinkedIn <span>Licenses &amp; certifications</span>
+        </a>
+      </section>
+
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="contact-orbit orbit-one" aria-hidden="true"></div>
         <div class="contact-orbit orbit-two" aria-hidden="true"></div>
-        <p class="section-kicker reveal"><span>04</span> Connect</p>
+        <p class="section-kicker reveal"><span>05</span> Connect</p>
         <h2 id="contact-title" class="reveal">Let’s build something<br /><span>worth remembering.</span></h2>
         <p class="reveal">Explore the code, follow the journey, or start a conversation.</p>
         <div class="contact-actions reveal">

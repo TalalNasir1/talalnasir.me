@@ -1,0 +1,130 @@
+{
+  "projects": [
+    {
+      "title": "Medical Insurance Cost Predictor",
+      "category": "ai",
+      "categoryLabel": "Applied AI",
+      "year": "2026",
+      "description": "An end-to-end linear regression project that moves from a cleaned 1,338-row dataset to a transparent prediction interface and reproducible evaluation.",
+      "tags": ["Python", "Scikit-learn", "Gradio", "Data analysis"],
+      "image": "assets/project-medical.jpg",
+      "imageAlt": "Medical Insurance Cost Predictor application interface",
+      "imageStyle": "standard",
+      "badge": "Live model",
+      "primaryUrl": "https://github.com/TalalNasir1/medical-insurance-cost-prediction",
+      "primaryLabel": "View repository",
+      "secondaryUrl": "https://huggingface.co/spaces/TalalNasir/medical-insurance-cost-prediction",
+      "secondaryLabel": "Try live demo",
+      "visualUrl": "https://huggingface.co/spaces/TalalNasir/medical-insurance-cost-prediction",
+      "visualLabel": "Open the Medical Insurance Cost Predictor live demo",
+      "layout": "featured",
+      "metricValue": "80.69%",
+      "metricLabel": "test R²"
+    },
+    {
+      "title": "Pocket Ledger",
+      "category": "product",
+      "categoryLabel": "Native product",
+      "year": "2026",
+      "description": "A native macOS finance and subscription tracker with Touch ID, local backups, CSV export, and no server, analytics, advertisements, or internet dependency.",
+      "tags": ["Swift", "macOS", "Keychain", "Offline-first"],
+      "image": "assets/project-pocket-ledger.png",
+      "imageAlt": "Pocket Ledger macOS finance dashboard",
+      "imageStyle": "wide",
+      "badge": "Private by design",
+      "primaryUrl": "https://github.com/TalalNasir1/PocketLedger",
+      "primaryLabel": "View repository",
+      "visualUrl": "https://github.com/TalalNasir1/PocketLedger",
+      "visualLabel": "Open Pocket Ledger on GitHub",
+      "layout": "standard"
+    },
+    {
+      "title": "Coffee Shop App UI",
+      "category": "product",
+      "categoryLabel": "Mobile UI",
+      "year": "2026",
+      "description": "A multi-screen coffee ordering concept built during a Big Brains internship, focused on Flutter widget structure, clean spacing, product browsing, details, cart, and checkout flows.",
+      "tags": ["Flutter", "Dart", "Mobile UI", "Multi-screen flow"],
+      "image": "assets/coffee-shop-1.jpg",
+      "imageAlt": "Coffee ordering app interface designed by Talal Nasir",
+      "imageStyle": "coffee",
+      "badge": "Flutter interface",
+      "primaryUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7505378387763544064/",
+      "primaryLabel": "View LinkedIn post",
+      "visualUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7505378387763544064/",
+      "visualLabel": "Open the Coffee Shop App UI project post on LinkedIn",
+      "layout": "standard"
+    },
+    {
+      "title": "Offline Loan Management System",
+      "category": "product",
+      "categoryLabel": "Desktop application",
+      "year": "2026",
+      "description": "A practical Windows application for borrowers, repayments, expenses, vouchers, reporting, Excel imports, and local backup—designed to replace manual records.",
+      "tags": ["Flutter", "Dart", "SQLite", "PDF & Excel"],
+      "image": "assets/project-loans.jpg",
+      "imageAlt": "Offline Loan Management System dashboard",
+      "imageStyle": "wide",
+      "badge": "Operational software",
+      "primaryUrl": "https://github.com/TalalNasir1/Offline-Loan-Management-System",
+      "primaryLabel": "View repository",
+      "visualUrl": "https://github.com/TalalNasir1/Offline-Loan-Management-System",
+      "visualLabel": "Open Offline Loan Management System on GitHub",
+      "layout": "standard"
+    },
+    {
+      "title": "E-Commerce Data Center Network",
+      "category": "systems",
+      "categoryLabel": "Systems design",
+      "year": "2026",
+      "description": "A Cisco Packet Tracer simulation connecting web, admin, support, data-center, and wireless zones with centralized DNS, web, mail, and RADIUS services.",
+      "tags": ["Cisco Packet Tracer", "IPv4", "Routing", "RADIUS"],
+      "image": "assets/project-network.png",
+      "imageAlt": "E-commerce data center network topology",
+      "imageStyle": "network",
+      "badge": "5 network zones",
+      "primaryUrl": "https://github.com/TalalNasir1/ecommerce-data-center-network",
+      "primaryLabel": "View repository",
+      "visualUrl": "https://github.com/TalalNasir1/ecommerce-data-center-network",
+      "visualLabel": "Open E-Commerce Data Center Network on GitHub",
+      "layout": "wide"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "The Fundamentals of Digital Marketing",
+      "issuer": "Google Digital Garage",
+      "issued": "Aug 2022",
+      "credential": "BEJ MWK 63U",
+      "featured": true
+    },
+    {
+      "title": "The Complete Digital Marketing Course",
+      "issuer": "Udemy",
+      "issued": "Oct 2023",
+      "credential": "UC-b3bd5633-7370-4214-b3f5-9ffb4289a9c9",
+      "featured": false
+    },
+    {
+      "title": "Digital Marketing Training",
+      "issuer": "Skillery",
+      "issued": "Apr 2021",
+      "credential": "Digital marketing",
+      "featured": false
+    },
+    {
+      "title": "Online WordPress Course",
+      "issuer": "Ibadat Welfare Society",
+      "issued": "Mar 2021",
+      "credential": "WD032904202104",
+      "featured": false
+    },
+    {
+      "title": "Motion Graphic Designing Course",
+      "issuer": "Ibadat Welfare Society",
+      "issued": "Jan 2021",
+      "credential": "Graphic design",
+      "featured": false
+    }
+  ]
+}

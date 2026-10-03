@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Portfolio Admin · Talal Nasir</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; color: #f6f0e8; background: radial-gradient(circle at 80% 0%, rgba(236,93,50,.16), transparent 34rem), #080706; }
+      .setup { display: none; width: min(92%, 720px); margin: 0 auto; padding: 10vh 0; }
+      .setup.is-visible { display: block; }
+      .mark { display: grid; width: 3rem; height: 3rem; place-content: center; color: #170c06; background: linear-gradient(135deg,#ffd786,#f4934f); border-radius: .8rem; font-weight: 900; }
+      .eyebrow { margin: 4rem 0 1rem; color: #ffc15c; font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; }
+      h1 { max-width: 650px; margin: 0; font-size: clamp(2.7rem, 8vw, 5.5rem); line-height: .95; letter-spacing: -.065em; }
+      .lede { max-width: 570px; margin: 1.6rem 0 2.4rem; color: #aaa198; font-size: 1.05rem; line-height: 1.75; }
+      ol { display: grid; gap: 1px; margin: 0; padding: 1px; background: rgba(255,255,255,.12); border-radius: 1.2rem; list-style: none; }
+      li { padding: 1.4rem; background: #110e0c; }
+      li:first-child { border-radius: 1.15rem 1.15rem 0 0; }
+      li:last-child { border-radius: 0 0 1.15rem 1.15rem; }
+      li span { display: block; margin-bottom: .35rem; color: #ffc15c; font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+      a { color: #ff9863; }
+      code { color: #f6f0e8; }
+      .back { display: inline-block; margin-top: 2rem; color: #f6f0e8; font-weight: 700; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <main class="setup" data-setup>
+      <div class="mark">TN</div>
+      <p class="eyebrow">One-time admin setup</p>
+      <h1>Your editor is ready to connect.</h1>
+      <p class="lede">The portfolio is already content-managed. Connect this repository to Decap Turbo once, then this page becomes your private dashboard for projects, certifications, links, tags, and images.</p>
+      <ol>
+        <li><span>01 · Create access</span>Sign up for the free one-site plan at <a href="https://turbo.decapcms.org" target="_blank" rel="noreferrer">Decap Turbo</a>.</li>
+        <li><span>02 · Connect GitHub</span>Connect the <code>TalalNasir1/talalnasir.me</code> repository and set this page’s live URL as the admin interface.</li>
+        <li><span>03 · Add the site ID</span>Replace <code>REPLACE_WITH_DECAP_TURBO_SITE_ID</code> in <code>admin/config.yml</code> with the Site ID shown by Turbo.</li>
+      </ol>
+      <a class="back" href="../">← Back to portfolio</a>
+    </main>
+    <script>
+      fetch('config.yml', { cache: 'no-store' })
+        .then((response) => response.text())
+        .then((config) => {
+          if (config.includes('REPLACE_WITH_DECAP_TURBO_SITE_ID')) {
+            document.querySelector('[data-setup]').classList.add('is-visible');
+            return;
+          }
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/decap-cms@3.17.0-beta.0/dist/decap-cms.js';
+          document.body.append(script);
+        })
+        .catch(() => document.querySelector('[data-setup]').classList.add('is-visible'));
+    </script>
+  </body>
+</html>
