@@ -91,6 +91,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .section-heading { max-width: 700px; margin: 0 auto 3.5rem; text-align: center; }
 .section-heading h2 { margin: 0; font-size: clamp(2.1rem, 4vw, 3.2rem); font-weight: 650; line-height: 1.08; letter-spacing: -.055em; }
 .section-heading p { margin: 1rem auto 0; color: var(--muted); font-size: .98rem; }
+.section-heading .section-kicker { margin: 0 0 .65rem; color: var(--accent); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .13em; }
 
 .skill-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .skill-card { min-height: 150px; padding: 1.4rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
@@ -100,6 +101,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .skill-card ul, .tag-list { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
 .skill-card li, .tag-list li { padding: .25rem .5rem; color: var(--text); background: var(--surface-strong); border-radius: 6px; font-size: .7rem; line-height: 1.2; }
 
+.journey-section { display: grid; gap: 0; }
+.journey-group { scroll-margin-top: 96px; }
+.journey-group + .journey-group { padding-top: 5rem; border-top: 1px solid var(--line); }
 .journey-list { display: grid; max-width: 900px; gap: 1rem; margin: 0 auto; }
 .journey-card { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem 2rem; padding: 1.65rem; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); }
 .journey-label { margin: 0 0 .35rem; color: var(--muted); font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
